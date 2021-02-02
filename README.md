@@ -11,9 +11,10 @@ Taught me a lot about inheritance, composition and polymorphism in the OOP domai
 
 1. Warrior
 2. Ranger
-3. Mage Designed to make it easily extendable.
+3. Mage 
+Designed to make it easily extendable.
 
 ### Items
 
-3 types of Armor and 3 types of weapons. Armor fits in certain slots of the Hero. Also designed with extendability in
-mind.
+3 types of Armor and 3 types of weapons. Armor fits in certain slots of the Hero.
+Also designed with extendability in mind.
