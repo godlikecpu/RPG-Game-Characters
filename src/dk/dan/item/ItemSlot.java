@@ -1,6 +1,11 @@
 package dk.dan.item;
 
 public enum ItemSlot {
+
+    /**
+     * Ties to an Item and is used to describe which slot the Item can fit on a Hero, along with the scaling based on slot
+     */
+
     CHEST {
         public double scaling() {
             return 1.0;
@@ -22,4 +27,6 @@ public enum ItemSlot {
             return 1.0;
         }
     };
+
+    public abstract double scaling();
 }

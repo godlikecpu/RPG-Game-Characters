@@ -1,8 +1,20 @@
 package dk.dan;
 
 public class Level {
+
+    /**
+     * This class represents the level of heroes and items.
+     * Provides functionality to gain X
+     */
+
     private int lvl = 1;
     private int xp = 0;
+
+    /**
+     * This method empties the given amount of XP and converts it to levels
+     *
+     * @param xp amount of XP
+     */
 
     public void gainXP(int xp) {
         while (xp != 0) {
@@ -16,6 +28,14 @@ public class Level {
             }
         }
     }
+
+    /**
+     * Finds out how much XP is needed to a certain level
+     *
+     * @param level     the level
+     * @param currentXp current amount of XP
+     * @return the amount of xp required to the next level
+     */
 
     public int getRequiredXp(int level, int currentXp) {
         int xpRequired = 100;

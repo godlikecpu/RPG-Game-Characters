@@ -5,6 +5,10 @@ import dk.dan.Stats;
 
 public abstract class Item {
 
+    /**
+     * Base class for items. ALl items in the game inherit from this.
+     */
+
     private String name;
     private Level level = new Level();
     private Stats stats;

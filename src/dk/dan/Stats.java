@@ -2,6 +2,11 @@ package dk.dan;
 
 public class Stats {
 
+    /**
+     * This class represents the stats of a character or item.
+     * Provides functionality to alter stats as well
+     */
+
     private int hp;
     private int strength;
     private int dexterity;
@@ -17,6 +22,12 @@ public class Stats {
         this.damage = damage;
     }
 
+    /**
+     * Adds two stats objects to each other.
+     *
+     * @param bonusStats the stats you want to add
+     * @return the concatenated stats
+     */
 
     public Stats addStats(Stats bonusStats) {
         this.setHp(this.getHp() + bonusStats.getHp());
@@ -27,20 +38,34 @@ public class Stats {
         return this;
     }
 
-    public Stats subtractStats(Stats bonusStats) {
-        this.setHp(this.getHp() - bonusStats.getHp());
-        this.setDamage(this.getDamage() - bonusStats.getDamage());
-        this.setStrength(this.getStrength() - bonusStats.getStrength());
-        this.setDexterity(this.getDexterity() - bonusStats.getDexterity());
-        this.setIntelligence(this.getIntelligence() - bonusStats.getIntelligence());
+    /**
+     * Scales stats by the given double
+     *
+     * @param scale the given double
+     * @return the scaled stats
+     */
+
+    public Stats scaleStats(double scale) {
+        this.setHp((int) Math.floor(this.getHp() * scale));
+        this.setDamage((int) Math.floor(this.getDamage() * scale));
+        this.setStrength((int) Math.floor(this.getStrength() * scale));
+        this.setDexterity((int) Math.floor(this.getDexterity() * scale));
+        this.setIntelligence((int) Math.floor(this.getIntelligence() * scale));
         return this;
     }
+
+    /**
+     * Clones a Stats object
+     *
+     * @param statsToClone the stats to clone
+     * @return a clone
+     */
 
     public Stats cloneStats(Stats statsToClone) {
         Stats clone = new Stats(0, 0, 0, 0, 0);
         clone.setHp(statsToClone.getHp());
         clone.setStrength(statsToClone.getStrength());
-        clone.setDamage(statsToClone.getDexterity());
+        clone.setDexterity(statsToClone.getDexterity());
         clone.setIntelligence(statsToClone.getIntelligence());
         clone.setDamage(statsToClone.getDamage());
         return clone;

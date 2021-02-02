@@ -1,8 +1,14 @@
 package dk.dan.item;
 
 import dk.dan.Stats;
+import dk.dan.item.itemtype.ItemType;
 
 public class Armor extends Item {
+
+    /**
+     * Instantiatable class for armor items.
+     */
+
     ItemType itemType;
 
     public Armor(String name, ItemType itemType, ItemSlot itemSlot) {
@@ -11,10 +17,24 @@ public class Armor extends Item {
         this.setStats(itemType.getBaseStats());
     }
 
+    /**
+     * Adds the Stats that the item gains per level
+     *
+     * @param currentStats the current Stats for the Item
+     * @param statsOnLevel the Stats to add to the item
+     * @return current Stats after addition
+     */
+
     public Stats addStatsFromLevel(Stats currentStats, Stats statsOnLevel) {
         currentStats.addStats(statsOnLevel);
         return currentStats;
     }
+
+    /**
+     * Wrapper method for gaining XP on the item.
+     *
+     * @param xp the amount of XP
+     */
 
     public void gainXP(int xp) {
         int levelBeforeXP = this.getLevel().getLvl();
@@ -27,7 +47,7 @@ public class Armor extends Item {
 
     @Override
     public Stats getBonusStats(Stats heroStats) {
-        return itemType.getScaledStats(heroStats, this.getStats());
+        return itemType.getScaledStats(heroStats, this.getStats(), this.getItemSlot());
     }
 
 

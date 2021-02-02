@@ -1,15 +1,21 @@
-package dk.dan.item;
+package dk.dan.item.itemtype;
 
 import dk.dan.Stats;
+import dk.dan.item.ItemSlot;
 
 public class Cloth implements ItemType {
+
+    /**
+     * Instantiable class for Cloth items.
+     * See docs on ItemType for clarification.
+     */
+
     private final Stats BASE_STATS = new Stats(10, 0, 1, 3, 0);
     private final Stats STATS_ON_LEVEL = new Stats(5, 0, 1, 2, 0);
 
     @Override
-    public Stats getScaledStats(Stats heroStats, Stats itemStats) {
-        heroStats = heroStats.addStats(itemStats);
-        return heroStats;
+    public Stats getScaledStats(Stats heroStats, Stats itemStats, ItemSlot itemSlot) {
+        return itemStats.scaleStats(itemSlot.scaling());
     }
 
     @Override
