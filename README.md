@@ -12,6 +12,7 @@ Taught me a lot about inheritance, composition and polymorphism in the OOP domai
 1. Warrior
 2. Ranger
 3. Mage 
+
 Designed to make it easily extendable.
 
 ### Items
